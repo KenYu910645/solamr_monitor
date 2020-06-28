@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="use_rviz" default="true" />
-    <node pkg="ros_pkg_example" type="subscriber.py" name="subscriber" output='screen'/>
-    <node pkg="ros_pkg_example" type="publisher.py" name="publisher" output='screen'/>
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ros_pkg_example)/rviz/default.rviz" if="$(arg use_rviz)" />
+    <include file="$(find solamr_monitor)/launch/master_discovery.launch"/>
+    <include file="$(find solamr_monitor)/launch/master_sync.launch"/>
 </launch>
 

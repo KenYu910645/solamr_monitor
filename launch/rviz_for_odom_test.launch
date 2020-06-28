@@ -1,0 +1,6 @@
+<launch>
+<node pkg='rviz' type='rviz' name='rviz' args='~/.rviz/odom_test.rviz'>
+<remap from='tf' to='tf_rviz'/>
+<!--remap from='/initialpose' to='/zed/initialpose'/-->
+</node>
+</launch>
