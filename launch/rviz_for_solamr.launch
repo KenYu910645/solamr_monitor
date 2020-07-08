@@ -1,5 +1,5 @@
 <launch>
-<node pkg='rviz' type='rviz' name='rviz' args='~/.rviz/solamr.rviz'>
+<node pkg='rviz' type='rviz' name='rviz' args='-d $(find solamr_monitor)/rviz/solamr.rviz'>
 <remap from='tf' to='tf_rviz'/>
 <!--remap from='/initialpose' to='/zed/initialpose'/-->
 </node>
