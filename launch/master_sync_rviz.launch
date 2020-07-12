@@ -54,7 +54,21 @@
                                    /car1/move_base/local_costmap/costmap,
                                    /car1/move_base/local_costmap/footprint,
                                    /car1/move_base/GlobalPlanner/plan,
-                                   /car1/move_base/DWAPlannerROS/local_plan]</rosparam>
+                                   /car1/move_base/DWAPlannerROS/local_plan,
+
+                                   /car2/scan_rviz,
+                                   /car2/map_rviz,
+                                   /car2/map,
+                                   /car2/raw_obstacles,
+                                   /car2/move_base/current_goal,
+                                   /car2/docking_shelf_cmd,
+                                   /car2/marker_line,
+                                   /car2/marker_sphere,
+                                   /car2/move_base/global_costmap/costmap,
+                                   /car2/move_base/local_costmap/costmap,
+                                   /car2/move_base/local_costmap/footprint,
+                                   /car2/move_base/GlobalPlanner/plan,
+                                   /car2/move_base/DWAPlannerROS/local_plan]</rosparam>
 
     <!-- The list of services, which are to be ignored while a synchroniation. The ~ignore_nodes list is processed first.
     These are defaults and cannot be removed: ['/*get_loggers', '/*set_logger_level'] -->

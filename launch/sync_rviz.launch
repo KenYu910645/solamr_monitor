@@ -2,6 +2,14 @@
 <launch>
     <include file="$(find solamr_monitor)/launch/master_discovery.launch"/>
     <include file="$(find solamr_monitor)/launch/master_sync_rviz.launch"/>
+    
+    <node pkg="tf" type="static_transform_publisher" name="world2car1" args="0 0 0 0 0 0 1 world car1/map 100" >
+        <remap from="tf" to="tf_rviz"/>
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="world2car2" args="0 0 0 0 0 0 1 world car2/map 100">
+        <remap from="tf" to="tf_rviz"/>
+    </node>
+
     <node pkg='rviz' type='rviz' name='rviz' args='-d $(find solamr_monitor)/rviz/solamr.rviz'>
         <!--remap from='/initialpose' to='/zed/initialpose'/-->
         <remap from='/tf' to='/tf_rviz'/>
