@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  
-  <node name="$(anon master_discovery)" pkg="master_discovery_fkie" type="master_discovery">
+  <node name="master_discovery_fkie" pkg="master_discovery_fkie" type="master_discovery">
     <param name="log_level" value="INFO" />
     <!-- Specifies the multicast group. You can bind the to defined interface by adding @address to the group -->
     <!--param name="mcast_group" value="226.0.0.0" /-->
@@ -11,7 +10,7 @@
     <!--param name="interface" value="" /-->
 
     <!-- The port number for XML-RPC server created by the node. (Default: ROS_MASTER_URI.port+300). -->
-    <!--param name="rpc_port" value="11611" /-->
+    <!--param name="rpc_port" value="$(arg rpc_port)" /-->
 
     <!-- the test rate of ROS master state in Hz (Default: 1 Hz). -->
     <param name="rosmaster_hz" value="1" />

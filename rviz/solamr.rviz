@@ -4,8 +4,12 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
         - /TF1/Frames1
-        - /Pose1
+        - /Global Costmap1
+        - /Scan_merged1
+        - /shelf_yellow_line1
+        - /shelf_blue_coner1
       Splitter Ratio: 0.487341762
     Tree Height: 721
   - Class: rviz/Selection
@@ -55,23 +59,23 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_link:
+        car1/base_link:
           Value: true
-        laser_front:
+        car1/laser_front:
           Value: true
-        laser_rear:
+        car1/laser_rear:
           Value: true
-        map:
+        car1/map:
           Value: true
-        odom:
+        car1/odom:
           Value: true
-        s_center_laser:
+        car1/s_center_laser:
           Value: true
-        s_front:
+        car1/s_front:
           Value: true
-        s_standby_camera:
+        car1/s_standby_camera:
           Value: true
-        s_standby_laser:
+        car1/s_standby_laser:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -79,18 +83,15 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_link:
-              laser_front:
+        car1/map:
+          car1/odom:
+            car1/base_link:
+              car1/laser_front:
                 {}
-              laser_rear:
+              car1/laser_rear:
                 {}
-              s_front:
-                s_standby_camera:
-                  {}
-          s_center_laser:
-            s_standby_laser:
+          car1/s_center_laser:
+            car1/s_standby_laser:
               {}
       Update Interval: 0
       Value: true
@@ -100,7 +101,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: "Static map "
-      Topic: /map
+      Topic: /car1/map
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -110,7 +111,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Local Costmap
-      Topic: /move_base/local_costmap/costmap
+      Topic: /car1/move_base/local_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -120,7 +121,7 @@ Visualization Manager:
       Draw Behind: true
       Enabled: true
       Name: Global Costmap
-      Topic: /move_base/global_costmap/costmap
+      Topic: /car1/move_base/global_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -149,7 +150,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.0299999993
       Style: Flat Squares
-      Topic: /scan_rviz
+      Topic: /car1/scan_rviz
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: false
@@ -159,7 +160,7 @@ Visualization Manager:
       Color: 255; 0; 0
       Enabled: true
       Name: AMR
-      Topic: /move_base/local_costmap/footprint
+      Topic: /car1/move_base/local_costmap/footprint
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -182,7 +183,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /move_base/DWAPlannerROS/global_plan
+      Topic: /car1/move_base/GlobalPlanner/plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -205,7 +206,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /move_base/DWAPlannerROS/local_plan
+      Topic: /car1/move_base/DWAPlannerROS/local_plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -220,12 +221,12 @@ Visualization Manager:
       Shaft Length: 1
       Shaft Radius: 0.0500000007
       Shape: Arrow
-      Topic: /move_base/current_goal
+      Topic: /car1/move_base/current_goal
       Unreliable: false
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /marker_line
+      Marker Topic: /car1/marker_line
       Name: shelf_yellow_line
       Namespaces:
         tiles: true
@@ -233,7 +234,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /marker_sphere
+      Marker Topic: /car1/marker_sphere
       Name: shelf_blue_coner
       Namespaces:
         tiles: true
@@ -243,7 +244,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: car1/map
     Frame Rate: 30
   Name: root
   Tools:
@@ -264,16 +265,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rtabmap_ros/OrbitOriented
-      Distance: 5.55796528
+      Distance: 7.57202625
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.686399221
-        Y: 1.37482917
-        Z: -0.00489627058
+        X: 1.11482024
+        Y: 0.603914201
+        Z: -0.0044688019
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
@@ -282,7 +283,7 @@ Visualization Manager:
       Pitch: 1.56979632
       Target Frame: <Fixed Frame>
       Value: OrbitOriented (rtabmap_ros)
-      Yaw: 3.13040519
+      Yaw: 3.14540529
     Saved: ~
 Window Geometry:
   Displays:
@@ -301,4 +302,4 @@ Window Geometry:
     collapsed: true
   Width: 1855
   X: 65
-  Y: 24
+  Y: 25
