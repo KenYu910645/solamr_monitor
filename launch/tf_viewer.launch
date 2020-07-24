@@ -1,0 +1,5 @@
+<launch>
+    <node name="tf_viewer" pkg="tf" type="view_frames">
+        <remap from="tf" to="tf_rviz"/>
+    </node>
+</launch>

@@ -42,7 +42,9 @@
 
     <!-- The list of topics to synchronize. The ~ignore_nodes and ~ignore_topics lists are processed first. -->
     <rosparam param="sync_topics">[/tf_rviz,
-                                   /car1/scan_rviz,
+
+                                   /car1/scan_merged,
+                                   /car1/zed2/map_rviz,
                                    /car1/map_rviz,
                                    /car1/map,
                                    /car1/raw_obstacles,
@@ -56,7 +58,8 @@
                                    /car1/move_base/GlobalPlanner/plan,
                                    /car1/move_base/DWAPlannerROS/local_plan,
 
-                                   /car2/scan_rviz,
+                                   /car2/scan_merged,
+                                   /car2/zed2/map_rviz,
                                    /car2/map_rviz,
                                    /car2/map,
                                    /car2/raw_obstacles,
@@ -68,7 +71,8 @@
                                    /car2/move_base/local_costmap/costmap,
                                    /car2/move_base/local_costmap/footprint,
                                    /car2/move_base/GlobalPlanner/plan,
-                                   /car2/move_base/DWAPlannerROS/local_plan]</rosparam>
+                                   /car2/move_base/DWAPlannerROS/local_plan]
+                                   </rosparam>
 
     <!-- The list of services, which are to be ignored while a synchroniation. The ~ignore_nodes list is processed first.
     These are defaults and cannot be removed: ['/*get_loggers', '/*set_logger_level'] -->

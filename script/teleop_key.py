@@ -90,11 +90,10 @@ def vels(speed,turn):
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
 
-    rospy.init_node('naive_teleop')
-    #
-    pub_car1 = rospy.Publisher('/car1/cmd_vel', Twist, queue_size=5)
-    pub_car2 = rospy.Publisher('/car2/cmd_vel', Twist, queue_size=5)
-
+    rospy.init_node('teleop_key')
+    
+    pub = rospy.Publisher("/cmd_vel", Twist, queue_size=5)
+    
     x = 0
     th = 0
     status = 0
@@ -155,10 +154,8 @@ if __name__=="__main__":
             twist = Twist()
             twist.linear.x = control_speed; twist.linear.y = 0; twist.linear.z = 0
             twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = control_turn
-            pub_car1.publish(twist)
-            # Reverse car2 velocity
-            twist.linear.x = -twist.linear.x
-            pub_car2.publish(twist)
+            # Lucky added, let cmd_vel don't publish while no keyboard input
+            pub.publish(twist)
 
             #print("loop: {0}".format(count))
             #print("target: vx: {0}, wz: {1}".format(target_speed, target_turn))
@@ -171,7 +168,6 @@ if __name__=="__main__":
         twist = Twist()
         twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
         twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
-        pub_car1.publish(twist)
-        pub_car2.publish(twist)
+        pub.publish(twist)
 
     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)

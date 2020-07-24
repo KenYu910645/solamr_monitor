@@ -92,8 +92,8 @@ if __name__=="__main__":
 
     rospy.init_node('naive_teleop')
     #
-    pub_car1 = rospy.Publisher('/car1/cmd_vel', Twist, queue_size=5)
-    pub_car2 = rospy.Publisher('/car2/cmd_vel', Twist, queue_size=5)
+    pub_car1 = rospy.Publisher('/car1/naive_cmd', Twist, queue_size=5)
+    pub_car2 = rospy.Publisher('/car2/naive_cmd', Twist, queue_size=5)
 
     x = 0
     th = 0
@@ -156,8 +156,6 @@ if __name__=="__main__":
             twist.linear.x = control_speed; twist.linear.y = 0; twist.linear.z = 0
             twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = control_turn
             pub_car1.publish(twist)
-            # Reverse car2 velocity
-            twist.linear.x = -twist.linear.x
             pub_car2.publish(twist)
 
             #print("loop: {0}".format(count))
