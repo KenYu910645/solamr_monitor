@@ -2,6 +2,7 @@
 <launch>
     <include file="$(find solamr_monitor)/launch/master_discovery.launch"/>
     <include file="$(find solamr_monitor)/launch/master_sync.launch"/>
-    <node pkg="solamr_monitor" name="naive_teleop" type="teleop_naive_cmder.py" output='screen'/>
+    <include file="$(find ros_linked_drive)/launch/linked_drive.launch"/>
+    <include file="$(find ros_teleop)/launch/joy.launch"/>
 </launch>
 

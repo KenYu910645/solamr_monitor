@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find solamr_monitor)/launch/master_discovery.launch"/>
+    <include file="$(find solamr_monitor)/launch/master_sync.launch"/>
+    <node pkg="rap_controller" name="rap_cmder" type="rap_teleop_cmder.py" output='screen'/>
+</launch>
+
