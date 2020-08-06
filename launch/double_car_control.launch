@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <include file="$(find solamr_monitor)/launch/master_discovery.launch"/>
-    <include file="$(find solamr_monitor)/launch/master_sync.launch"/>
-    <node pkg="solamr_monitor" name="naive_teleop" type="teleop_key_double_car.py" output='screen'/>
-</launch>
-

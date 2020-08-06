@@ -57,7 +57,8 @@
                                    /car1/move_base/local_costmap/footprint,
                                    /car1/move_base/GlobalPlanner/plan,
                                    /car1/move_base/DWAPlannerROS/local_plan,
-
+                                   /car1/move_base/TebLocalPlannerROS/local_plan,
+                                   
                                    /car2/scan_merged,
                                    /car2/zed2/map_rviz,
                                    /car2/map_rviz,
