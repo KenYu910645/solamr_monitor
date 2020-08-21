@@ -41,7 +41,7 @@
     -->
 
     <!-- The list of topics to synchronize. The ~ignore_nodes and ~ignore_topics lists are processed first. -->
-    <rosparam param="sync_topics">[/tf_rviz,
+    <rosparam param="sync_topics">[/tf,
 
                                    /car1/scan_merged,
                                    /car1/zed2/map_rviz,

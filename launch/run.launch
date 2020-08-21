@@ -1,39 +1,27 @@
 <?xml version="1.0"?>
 <launch>
+    <!-- Argument -->
+    <arg name="use_spiderkiller_joy_stick" default="false"/>
+    <!-- Fkie -->
     <include file="$(find solamr_monitor)/launch/fkie/master_discovery.launch"/>
     <include file="$(find solamr_monitor)/launch/fkie/master_sync_run.launch"/>
-    
-    <node pkg="tf" type="static_transform_publisher" name="world2car1" args="0 0 0 0 0 0 1 world car1/map 100" >
+    <!-- Static TF transform -->
+    <node pkg="tf" type="static_transform_publisher" name="world2car1" args="0 0 0 0 0 0 1 world car1/map 100">
         <remap from="tf" to="tf_rviz"/>
     </node>
     <node pkg="tf" type="static_transform_publisher" name="world2car2" args="0 0 0 0 0 0 1 world car2/map 100">
         <remap from="tf" to="tf_rviz"/>
     </node>
 
-    <node pkg='rviz' type='rviz' name='rviz' args='-d $(find solamr_monitor)/rviz/solamr.rviz'>
-        <!--remap from='/initialpose' to='/zed/initialpose'/-->
-        <remap from='/tf' to='/tf_rviz'/>
-    </node>
+    <node pkg='rviz' type='rviz' name='rviz' args='-d $(find solamr_monitor)/rviz/solamr.rviz'/>
 
-    <node pkg="rap_controller" type="teleop_joy.py" name="teleop_joy" output="screen">
+    <node pkg="rap_controller" type="teleop_joy.py" name="teleop_joy">
         <param name="vx_max" value="0.2"/>
         <param name="vy_max" value="0.2"/>
         <param name="wz_max" value="0.5"/>
-
-        <param name="vx_axe" value="3"/>
-        <param name="vy_axe" value="2"/>
-        <param name="wz_axe" value="0"/>
-        <param name="switch_mode_button" value="1"/>
-        <param name="speed_axe" value="5"/>
-        <param name="turn_axe" value="4"/>
-
-        <!--param name="vx_axe" value="4"/>
-        <param name="vy_axe" value="3"/>
-        <param name="wz_axe" value="0"/>
-        <param name="speed_axe" value="7"/>
-        <param name="turn_axe" value="6"/>
-        <param name="switch_mode_button" value="0"/-->
+        <param name="use_spiderkiller_joy_stick" value="$(arg use_spiderkiller_joy_stick)"/>
     </node>
+    
     <node pkg="joy" type="joy_node" name="joy">
         <param name="autorepeat_rate" value="2.0" />
         <param name="deadzone" value="0.05" />
