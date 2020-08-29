@@ -17,7 +17,7 @@
         <remap from="tf" to="tf_rviz"/>
     </node>
 
-    <node pkg="rap_controller" type="teleop_joy.py" name="teleop_joy">
+    <node pkg="rap_controller" type="teleop_joy.py" name="teleop_joy" output="screen">
         <param name="vx_max" value="0.2"/>
         <param name="vy_max" value="0.2"/>
         <param name="wz_max" value="0.5"/>
