@@ -12,7 +12,9 @@
     <node pkg="tf" type="static_transform_publisher" name="world2car2" args="0 0 0 0 0 0 1 world car2/map 100">
         <remap from="tf" to="tf_rviz"/>
     </node>
-
+    <!-- <node pkg="tf" type="static_transform_publisher" name="world2car3" args="0 0 0 0 0 0 1 world carB/map 100">
+        <remap from="tf" to="tf_rviz"/>
+    </node> -->
     <node pkg='rviz' type='rviz' name='rviz' args='-d $(find solamr_monitor)/rviz/solamr.rviz'>
         <remap from="tf" to="tf_rviz"/>
     </node>
